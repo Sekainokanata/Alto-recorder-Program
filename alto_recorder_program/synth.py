@@ -8,12 +8,13 @@ import librosa
 import numpy as np
 
 try:
-    from pedalboard import Convolution, Distortion, Pedalboard, Reverb
+    from pedalboard import Convolution, Distortion, Pedalboard, Reverb, PitchShift
 except Exception:
     Convolution = None
     Distortion = None
     Pedalboard = None
     Reverb = None
+    PitchShift = None
 
 from .analysis import SourceClip
 from .notes import beats_to_seconds, duration_to_beats, note_to_frequency, note_to_midi
@@ -81,6 +82,11 @@ def render_recorder_note(source_clip: SourceClip, target_note: str, duration, bp
     shaped = apply_fade(stretched, source_clip.sample_rate)
     return normalize_audio(shaped) * float(velocity)
 
+###################################    
+###################################    
+###################################    
+###################################    
+###################################    
 
 @lru_cache(maxsize=8)
 def _build_guitar_board(ir_file: str):
@@ -88,11 +94,25 @@ def _build_guitar_board(ir_file: str):
         raise RuntimeError("pedalboard is required for electric guitar rendering. Install with: pip install pedalboard")
     return Pedalboard(
         [
-            Distortion(drive_db=42.0),
+            # ① ピッチシフト: オクターブ下にしてギターの太い帯域に合わせる
+            PitchShift(semitones=-12),
+            
+            # ② ディストーション: ファズのような割れた歪み
+            Distortion(drive_db=40.0),
+            
+            # ③ キャビネットシミュレータ(IR)
             Convolution(impulse_response_filename=ir_file, mix=1.0),
-            Reverb(room_size=0.15, damping=0.8, wet_level=0.1),
+            
+            # ④ リバーブ: 空間的な広がりを足して馴染ませる
+            Reverb(room_size=0.1, damping=0.9, wet_level=0.15),
         ]
     )
+    
+###################################    
+###################################    
+###################################    
+###################################    
+###################################    
 
 
 def render_electric_guitar_note(
@@ -102,7 +122,7 @@ def render_electric_guitar_note(
     bpm: float,
     ir_file: str | Path,
     velocity: float = 1.0,
-    octave_shift: int = -1,
+    octave_shift: int = 0,
 ) -> np.ndarray:
     ir_path = Path(ir_file)
     if not ir_path.exists():
