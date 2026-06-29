@@ -9,9 +9,9 @@ ENABLE_BASS = False
 ENABLE_DRUMS = False
 ENABLE_GUITAR = True
 
-MELODY_BASE_VELOCITY = 0.15
+MELODY_BASE_VELOCITY = 0.2
 BASS_BASE_VELOCITY = 0.2
-GUITAR_BASE_VELOCITY = 0.2
+GUITAR_BASE_VELOCITY = 0.15
 
 # Electric guitar IR file used by convolution.
 # Change only this file name/path to swap cabinet tone.
@@ -1139,112 +1139,118 @@ GUITAR = [
     #廻れ廻
     {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
     {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["D5","E5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["D5","E5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
     # れ時代の
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["F5","G5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["F5","G5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
     #生き恥に
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["G5","A5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["G5","A5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
-    
-    {"value": "ファ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
     
     #ずぶ濡れで
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "シ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "D4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
     # 愛憎愛憎
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "A3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
+    {"value": "G3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
     
     # を喰らって
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "D4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "D4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
     #参ろう大層
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "F#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     
-    {"value": "ファ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
+    {"value": "F3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
     
     #な様で
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "シ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "B3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
-    # 離れ離
-    {"value": "ラ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},###
-    {"value": "ラ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    #離れ離
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["D5","E5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["D5","E5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
-
     # れで終いよ
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["F5","G5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["F5","G5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
     # 然らば又
-    {"value": "ファ#2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},    
-    {"value": "ファ#2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "C6", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A6", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E6", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "D6", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     
-    {"value": "ファ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
     
     # 逢いましょう
-    {"value": "ソ3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ3", "duration": "3/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "D4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
     # 間奏
-    {"value": "Mute", "duration": "1/1","velocity": MELODY_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "6/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
     
     # ド
-    {"value": "Mute", "duration": "1/1","velocity": MELODY_BASE_VELOCITY},
+    
+    {"value": "Mute", "duration": "1/2","velocity": MELODY_BASE_VELOCITY},
     
     # ラマチックに
     {"value": "Mute", "duration": "1/1","velocity": MELODY_BASE_VELOCITY},
@@ -1271,293 +1277,327 @@ GUITAR = [
     {"value": "Mute", "duration": "1/1","velocity": MELODY_BASE_VELOCITY},
     
     # な愛でも
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     # 許して 構わ
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     # ない 此の舞台
-    {"value": "ソ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     # 生き抜いて 咬ま
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     # せ狗のハイテン
-    {"value": "ファ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     # ション ヤラレっ
-    {"value": "ミ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     # ぱなしじゃ 大人し
-    {"value": "シ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "シ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "シ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "シ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "シ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "シ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "シ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "シ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "B4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "B4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "B4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "B4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "B4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "B4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "B4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "B4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
 
     
     # くはなれない
-    {"value": "ミ3", "duration": "1/1", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+
     
     # LUV ME LUV ME
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "Mute", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     #正しさばかりで
-    {"value": "Mute", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     # HATE ME HATE ME
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "Mute", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     #全部奪って
-    {"value": "Mute", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     # LUV ME LUV ME
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "Mute", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     #愛憎塗れで
-    {"value": "Mute", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     # KILL ME KILL ME
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "Mute", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     #此処を連れ出して
-    {"value": "Mute", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["A3","E4"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     # え～
-    {"value": "Mute", "duration": "1/1","velocity": MELODY_BASE_VELOCITY},
+    {"value": "D5", "duration": "1/12", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E5", "duration": "1/12", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G5", "duration": "1/12", "velocity": BASS_BASE_VELOCITY},
     
-    # 間奏
-    {"value": "Mute", "duration": "1/1","velocity": MELODY_BASE_VELOCITY},
+    {"value": "E5", "duration": "1/12", "velocity": BASS_BASE_VELOCITY},
+    {"value": "D5", "duration": "1/12", "velocity": BASS_BASE_VELOCITY},
+    {"value": "B4", "duration": "1/12", "velocity": BASS_BASE_VELOCITY},
+    
+    {"value": "D5", "duration": "1/12", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E5", "duration": "1/12", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F5", "duration": "1/12", "velocity": BASS_BASE_VELOCITY},
+    
+    {"value": "F5", "duration": "1/12", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#5", "duration": "1/12", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G#5", "duration": "1/12", "velocity": BASS_BASE_VELOCITY},
+    
+    #間奏
+    {"value": "A5", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "A4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "A6", "duration": "1/16","velocity": MELODY_BASE_VELOCITY},
+    {"value": "A6", "duration": "1/16","velocity": MELODY_BASE_VELOCITY},
+    {"value": "A6", "duration": "1/16","velocity": MELODY_BASE_VELOCITY},
+    {"value": "A6", "duration": "1/16","velocity": MELODY_BASE_VELOCITY},
+    {"value": "A6", "duration": "1/16","velocity": MELODY_BASE_VELOCITY},
+    {"value": "A6", "duration": "1/16","velocity": MELODY_BASE_VELOCITY},
+    {"value": "A6", "duration": "1/16","velocity": MELODY_BASE_VELOCITY},
+    {"value": "A6", "duration": "1/16","velocity": MELODY_BASE_VELOCITY},
     
     # 愛憎愛憎
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "A3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
+    {"value": "G3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
     
     # 抱き合って
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "D4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "D4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
     #最高潮よ
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "F#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     
-    {"value": "ファ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
+    {"value": "F3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
     
     #何時だって
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "シ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "B3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
     #騙し騙
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["D5","E5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["D5","E5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
     # しで良いの
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["F5","G5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["F5","G5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
     #代償なんて
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["G5","A5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["G5","A5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
-    
-    {"value": "ファ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
     
     #気にしないよ
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "シ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "D4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
     # 愛憎愛憎
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "A3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
+    {"value": "G3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
     
     # に足宛いて
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "D4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "D4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
     #外交愛想
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "F#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     
-    {"value": "ファ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
+    {"value": "F3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
     
     #振り撒いて
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "シ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "F3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "B3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
-    # 万物問答
-    {"value": "ラ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ラ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    #万物問答
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["D5","E5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["D5","E5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
-
     # 無用で終いよ
-    {"value": "ソ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド#3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ソ2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["F5","G5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "X", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": ["F5","G5"], "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
     
     # 然らば又
-    {"value": "ファ#2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},    
-    {"value": "ファ#2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ド3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "レ3", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ#2", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},    
+    {"value": "C6", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A6", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E6", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "D6", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
     
     
-    {"value": "ファ2", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},##小節マタギ
     
     # 逢いましょう
-    {"value": "ソ3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ファ3", "duration": "1/4", "velocity": BASS_BASE_VELOCITY},
-    {"value": "ミ3", "duration": "3/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "E5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "C5", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "G4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "D4", "duration": "1/8", "velocity": BASS_BASE_VELOCITY},
+    {"value": "A3", "duration": "5/4", "velocity": BASS_BASE_VELOCITY},
 ]
 
 

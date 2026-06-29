@@ -95,24 +95,43 @@ def build_song() -> None:
 	)
 
 	guitar_ir_path = SCRIPT_DIR / GUITAR_IR_FILE
+
+	def render_guitar_event(event):
+		val = event.value
+		
+		# 単音またはブラッシング音を処理する内部関数
+		def render_single_note(note_str):
+			if str(note_str).strip().upper() == "X":
+				return render_electric_guitar_brush(
+					source_clip.sample_rate,
+					guitar_ir_path,
+					velocity=event.velocity,
+				)
+			elif str(note_str).strip().lower() == "mute":
+				return np.zeros(0, dtype=np.float32)
+			else:
+				return render_electric_guitar_note(
+					source_clip,
+					note_str,
+					event.duration,
+					BPM,
+					guitar_ir_path,
+					velocity=event.velocity,
+				)
+
+		# valがリストかタプルなら和音として処理
+		if isinstance(val, (list, tuple)):
+			parts = [render_single_note(note) for note in val]
+			mix = sum(parts) if parts else np.zeros(0, dtype=np.float32)
+			return mix
+		else:
+			return render_single_note(val)
+
 	guitar_track = render_track(
 		guitar_events,
 		BPM,
 		source_clip.sample_rate,
-		lambda event: render_electric_guitar_brush(
-			source_clip.sample_rate,
-			guitar_ir_path,
-			velocity=event.velocity,
-		)
-		if str(event.value).strip().upper() == "X"
-		else render_electric_guitar_note(
-			source_clip,
-			event.value,
-			event.duration,
-			BPM,
-			guitar_ir_path,
-			velocity=event.velocity,
-		),
+		lambda event: render_guitar_event(event),
 	)
 
 	final_mix = mix_tracks([melody_track, bass_track, drum_track, guitar_track])
