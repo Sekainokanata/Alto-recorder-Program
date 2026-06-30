@@ -98,7 +98,7 @@ def _build_guitar_board(ir_file: str):
             PitchShift(semitones=-12),
             
             # ② ディストーション: ファズのような割れた歪み
-            Distortion(drive_db=40.0),
+            Distortion(drive_db=45.0),
             
             # ③ キャビネットシミュレータ(IR)
             Convolution(impulse_response_filename=ir_file, mix=1.0),
@@ -186,28 +186,128 @@ def render_bass_note(note: str, duration, bpm: float, sample_rate: int, velocity
     return normalize_audio(body * envelope) * float(velocity)
 
 
-def render_drum_hit(kind: str, duration, bpm: float, sample_rate: int, velocity: float = 1.0) -> np.ndarray:
-    beats = duration_to_beats(duration)
-    seconds = beats_to_seconds(beats, bpm)
-    length = max(1, int(round(seconds * sample_rate)))
-    t = np.arange(length, dtype=np.float32) / sample_rate
-    envelope = np.exp(-t * 18.0)
+def render_drum_hit(
+    source_clip: SourceClip,
+    kind: str, 
+    duration, 
+    bpm: float, 
+    sample_rate: int, 
+    velocity: float = 1.0
+) -> np.ndarray:
+    import scipy.signal  # フィルター処理用ライブラリを読み込み
 
-    if kind == "kick":
-        freq = 140.0 * np.exp(-t * 10.0) + 44.0
-        phase = 2.0 * math.pi * np.cumsum(freq) / sample_rate
-        body = np.sin(phase)
-        click = np.sin(2.0 * math.pi * 2500.0 * t) * np.exp(-t * 180.0)
-        signal = 0.95 * body * envelope + 0.18 * click
+    kind = kind.lower()
+    
+    # --- 1. 種類ごとのパラメータ設定 ---
+    if kind == "kick-bass":
+        n_steps = -60
+        decay_sec = 0.4
+        mix_noise = 0.0
+        attack_noise = 0.02  # ★キックのノイズは極限まで減らす
     elif kind == "snare":
-        noise = RNG.normal(0.0, 1.0, size=length).astype(np.float32)
-        mid = np.sin(2.0 * math.pi * 180.0 * t) * np.exp(-t * 35.0)
-        signal = 0.85 * noise * envelope + 0.15 * mid
-    elif kind in {"hat", "hihat", "hi-hat"}:
-        noise = RNG.normal(0.0, 1.0, size=length).astype(np.float32)
-        high = noise - np.concatenate([[0.0], noise[:-1]])
-        signal = high * np.exp(-t * 60.0)
+        n_steps = -12
+        decay_sec = 0.25
+        mix_noise = 0.7
+        attack_noise = 0.5
+    elif kind in {"hi-hat", "hat"}:
+        n_steps = 24
+        decay_sec = 0.08
+        mix_noise = 0.9
+        attack_noise = 0.8
+    elif kind == "tam-h":
+        n_steps = -17
+        decay_sec = 0.4
+        mix_noise = 0.0
+        attack_noise = 0.4
+    elif kind == "tam-l":
+        n_steps = -24
+        decay_sec = 0.45
+        mix_noise = 0.0
+        attack_noise = 0.4
+    elif kind == "tam-f":
+        n_steps = -40
+        decay_sec = 0.5
+        mix_noise = 0.0
+        attack_noise = 0.4
+    elif kind == "crash-cymbal":
+        n_steps = 12
+        decay_sec = 1.5
+        mix_noise = 0.8
+        attack_noise = 0.8
     else:
         raise ValueError(f"Unsupported drum kind: {kind}")
+
+    # --- 2. 原音のピッチシフト ---
+    shifted = librosa.effects.pitch_shift(
+        source_clip.samples.astype(np.float32), 
+        sr=source_clip.sample_rate, 
+        n_steps=n_steps
+    )
+
+    # --- 3. フィルター処理（★ここが音色を劇的に分けるポイント） ---
+    nyq = 0.5 * sample_rate  # ナイキスト周波数
+    
+    if kind == "kick-bass":
+        # ローパスフィルター：250Hz以下の「重低音」だけを通し、シャリシャリ音を消す
+        b, a = scipy.signal.butter(2, 250.0 / nyq, btype='low')
+        shifted = scipy.signal.filtfilt(b, a, shifted)
+        shifted *= 50.0 # 低音だけ残すと音量が下がるのでブーストする
+        
+    elif kind in {"hi-hat", "hat", "crash-cymbal"}:
+        # ハイパスフィルター：2000Hz以上の「金属音」だけを通し、モコモコ感を消す
+        b, a = scipy.signal.butter(2, 2000.0 / nyq, btype='high')
+        shifted = scipy.signal.filtfilt(b, a, shifted)
+
+    # --- 4. 長さとエンベロープの調整 ---
+    target_len = max(1, int(round(decay_sec * sample_rate)))
+    if len(shifted) > target_len:
+        shifted = shifted[:target_len]
+    else:
+        shifted = np.pad(shifted, (0, target_len - len(shifted)))
+
+    t = np.arange(target_len, dtype=np.float32) / sample_rate
+
+    if kind == "crash-cymbal":
+        body_env = np.exp(-t * 2.5)
+    elif kind in {"hi-hat", "hat"}:
+        body_env = np.exp(-t * 40.0)
+    elif kind in {"tam-h", "tam-l", "tam-f"}:
+        body_env = np.exp(-t * 10.0)
+    elif kind == "kick-bass":
+        body_env = np.exp(-t * 6.0) # キックは余韻を少し長めに
+    else:
+        body_env = np.exp(-t * 15.0)
+
+    attack_env = np.exp(-t * 80.0)
+
+    # --- 5. 音の合成 ---
+    noise = RNG.normal(0.0, 1.0, size=target_len).astype(np.float32)
+    
+    # ノイズ側にもフィルターをかける（ハイハットのノイズから低音を抜く）
+    if kind in {"hi-hat", "hat", "crash-cymbal", "snare"}:
+        b, a = scipy.signal.butter(2, 1000.0 / nyq, btype='high')
+        noise = scipy.signal.filtfilt(b, a, noise)
+
+    body_signal = shifted * body_env * (1.0 - mix_noise)
+    body_noise_signal = noise * body_env * mix_noise
+    attack_signal = noise * attack_env * attack_noise
+
+    # タムのみに原音（高音）の打撃感を足す（キックバスからは削除して純粋な低音にする）
+    if kind in {"tam-h", "tam-l", "tam-f"}:
+        raw_source = source_clip.samples.astype(np.float32)
+        if len(raw_source) > target_len:
+            raw_source = raw_source[:target_len]
+        else:
+            raw_source = np.pad(raw_source, (0, target_len - len(raw_source)))
+            
+        pitch_drop_env = np.exp(-t * 50.0)
+        attack_signal += raw_source * pitch_drop_env * 0.4
+
+    signal = body_signal + body_noise_signal + attack_signal
+
+    # スピーカーへの負荷（クリックノイズ）防止用の極短フェードイン
+    attack_len = min(target_len, int(0.001 * sample_rate))
+    if attack_len > 0:
+        signal[:attack_len] *= np.linspace(0.0, 1.0, attack_len, dtype=np.float32)
 
     return normalize_audio(signal) * float(velocity)

@@ -81,17 +81,34 @@ def build_song() -> None:
 		),
 	)
 
+	def render_drum_event(event):
+		val = event.value
+		def render_single_hit(hit_name):
+			if str(hit_name).strip().lower() == "mute":
+				return np.zeros(0, dtype=np.float32)
+			else:
+				return render_drum_hit(
+					source_clip,  # ← リコーダー音声を渡す
+					hit_name,
+					event.duration,
+					BPM,
+					source_clip.sample_rate,
+					velocity=event.velocity,
+				)
+
+		# リストまたはタプルの場合は和音（同時打ち）として処理
+		if isinstance(val, (list, tuple)):
+			parts = [render_single_hit(h) for h in val]
+			mix = mix_tracks(parts) if parts else np.zeros(0, dtype=np.float32)
+			return mix
+		else:
+			return render_single_hit(val)
+
 	drum_track = render_track(
 		drum_events,
 		BPM,
 		source_clip.sample_rate,
-		lambda event: render_drum_hit(
-			event.value,
-			event.duration,
-			BPM,
-			source_clip.sample_rate,
-			velocity=event.velocity,
-		),
+		lambda event: render_drum_event(event), # ← 上で作った関数を呼び出す
 	)
 
 	guitar_ir_path = SCRIPT_DIR / GUITAR_IR_FILE
