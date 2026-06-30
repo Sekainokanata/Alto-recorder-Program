@@ -11,7 +11,7 @@ ENABLE_GUITAR = True
 
 MELODY_BASE_VELOCITY = 0.3
 BASS_BASE_VELOCITY = 0.3
-GUITAR_BASE_VELOCITY = 0.15
+GUITAR_BASE_VELOCITY = 0.05
 
 # Electric guitar IR file used by convolution.
 # Change only this file name/path to swap cabinet tone.
