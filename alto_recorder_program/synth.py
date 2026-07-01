@@ -95,7 +95,7 @@ def _build_guitar_board(ir_file: str):
     return Pedalboard(
         [
             # ① ピッチシフト: オクターブ下にしてギターの太い帯域に合わせる
-            PitchShift(semitones=-12),
+            PitchShift(semitones=-24),
             
             # ② ディストーション: ファズのような割れた歪み
             Distortion(drive_db=45.0),
@@ -122,7 +122,7 @@ def render_electric_guitar_note(
     bpm: float,
     ir_file: str | Path,
     velocity: float = 1.0,
-    octave_shift: int = 0,
+    octave_shift: int = 2,
 ) -> np.ndarray:
     ir_path = Path(ir_file)
     if not ir_path.exists():
@@ -142,6 +142,7 @@ def render_electric_guitar_note(
     board = _build_guitar_board(str(ir_path))
     effected = board(shaped[np.newaxis, :], source_clip.sample_rate)
     effected_mono = effected[0] if effected.ndim == 2 else effected
+    
     return normalize_audio(effected_mono) * float(velocity)
 
 

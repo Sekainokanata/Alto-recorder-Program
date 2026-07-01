@@ -11,8 +11,8 @@ ENABLE_GUITAR = True
 
 MELODY_BASE_VELOCITY = 0.3
 BASS_BASE_VELOCITY = 0.3
-GUITAR_BASE_VELOCITY = 0.05
-DRUM_BASE_VELOCITY = 0.8
+GUITAR_BASE_VELOCITY = 0.1
+DRUM_BASE_VELOCITY = 0.5
 
 # Electric guitar IR file used by convolution.
 # Change only this file name/path to swap cabinet tone.
@@ -1142,26 +1142,26 @@ GUITAR = [
     #廻れ廻
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},    
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["D5","E5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "D5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["D5","E5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "D5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     
     # れ時代の
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},    
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["F5","G5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "F5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["F5","G5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "F5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     
     #生き恥に
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},    
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["G5","A5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["G5","A5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     
     
     #ずぶ濡れで
@@ -1214,18 +1214,18 @@ GUITAR = [
     #離れ離
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},    
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["D5","E5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "D5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["D5","E5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "D5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     
     # れで終いよ
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},    
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["F5","G5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "F5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["F5","G5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "F5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     
     # 然らば又
     {"value": "Mute", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},    
@@ -1249,7 +1249,7 @@ GUITAR = [
     {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     
     # 間奏
-    {"value": ["A3","E4"], "duration": "6/4", "velocity": GUITAR_BASE_VELOCITY},##小節マタギ
+    {"value": "A3", "duration": "6/4", "velocity": GUITAR_BASE_VELOCITY},##小節マタギ
     
     # ド
     
@@ -1362,64 +1362,64 @@ GUITAR = [
 
     
     # LUV ME LUV ME
-    {"value": ["A3","E4"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["A3","E4"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     
     #正しさばかりで
-    {"value": ["A3","E4"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["A3","E4"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     
     # HATE ME HATE ME
-    {"value": ["A3","E4"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["A3","E4"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     
     #全部奪って
-    {"value": ["A3","E4"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["A3","E4"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     
     # LUV ME LUV ME
-    {"value": ["A3","E4"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["A3","E4"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     
     #愛憎塗れで
-    {"value": ["A3","E4"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["A3","E4"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     
     # KILL ME KILL ME
-    {"value": ["A3","E4"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["A3","E4"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     
     #此処を連れ出して
-    {"value": ["A3","E4"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["A3","E4"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
@@ -1496,26 +1496,26 @@ GUITAR = [
     #騙し騙
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},    
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["D5","E5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "D5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["D5","E5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "D5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     
     # しで良いの
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},    
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["F5","G5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "F5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["F5","G5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "F5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     
     #代償なんて
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},    
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["G5","A5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["G5","A5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "A5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     
     
     #気にしないよ
@@ -1568,18 +1568,18 @@ GUITAR = [
     #万物問答
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},    
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["D5","E5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "D5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["D5","E5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "D5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     
     # 無用で終いよ
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},    
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["F5","G5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "F5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "X", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
-    {"value": ["F5","G5"], "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
+    {"value": "F5", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY},
     
     # 然らば又
     {"value": "Mute", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},    
