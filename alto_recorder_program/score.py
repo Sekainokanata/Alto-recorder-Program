@@ -9,9 +9,9 @@ ENABLE_MELODY_TUNETA = True
 ENABLE_MELODY_CHORUS = True
 
 
-ENABLE_BASS = False
-ENABLE_DRUMS = False
-ENABLE_GUITAR = False
+ENABLE_BASS = True
+ENABLE_DRUMS = True
+ENABLE_GUITAR = True
 
 
 
@@ -21,7 +21,7 @@ MELODY_CHORUS_BASE_VELOCITY = 0.3
 
 
 BASS_BASE_VELOCITY = 0.4
-GUITAR_BASE_VELOCITY = 0.1
+GUITAR_BASE_VELOCITY = 0.15
 DRUM_BASE_VELOCITY = 0.5
 
 # Electric guitar IR file used by convolution.
@@ -2764,8 +2764,6 @@ GUITAR = [
     {"value": "D4", "duration": "1/8", "velocity": GUITAR_BASE_VELOCITY},
     {"value": "A3", "duration": "5/4", "velocity": GUITAR_BASE_VELOCITY},
 ]
-
-# Drum events are placed with explicit beat positions.
 DRUMS = [
     #書き方例{"value": ["kick-bass", "hi-hat"], "duration": "1/8", "velocity": DRUM_BASE_VELOCITY},
     #tam2がlower
@@ -3003,7 +3001,8 @@ DRUMS = [
     # 間奏
     {"value": "kick-bass", "duration": "1/4", "velocity": DRUM_BASE_VELOCITY},
     {"value": "kick-bass", "duration": "1/4", "velocity": DRUM_BASE_VELOCITY},
-    {"value": "Mute", "duration": "1/2", "velocity": DRUM_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/4", "velocity": DRUM_BASE_VELOCITY},
+    {"value": "crash-cymbal", "duration": "1/4", "velocity": DRUM_BASE_VELOCITY},
 
     # ド
     {"value": "kick-bass", "duration": "1/4", "velocity": DRUM_BASE_VELOCITY},
