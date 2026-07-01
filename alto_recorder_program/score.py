@@ -10,7 +10,7 @@ ENABLE_DRUMS = True
 ENABLE_GUITAR = True
 
 MELODY_BASE_VELOCITY = 0.3
-BASS_BASE_VELOCITY = 0.3
+BASS_BASE_VELOCITY = 0.4
 GUITAR_BASE_VELOCITY = 0.1
 DRUM_BASE_VELOCITY = 0.5
 
@@ -25,37 +25,37 @@ GUITAR_IR_FILE = "57_grill_edge_pres_4.wav"
 ####進捗1:MELODY と　BASS　は完成。GUITAR はまだ。DRUMS はまだ。　2024/06/10 19:00
 MELODY = [
     # LUV ME LUV ME
-    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
-    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
-    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
-    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
     
     #間奏
     {"value": "Mute", "duration": "1/1","velocity": MELODY_BASE_VELOCITY},
     
     # HATE ME HATE ME
-    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
-    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
-    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
-    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
     
     #間奏
     {"value": "Mute", "duration": "1/1","velocity": MELODY_BASE_VELOCITY},
     
     # LUV ME LUV ME
-    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
-    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
-    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
-    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
     
     #間奏
     {"value": "Mute", "duration": "1/1","velocity": MELODY_BASE_VELOCITY},
     
     # KILL ME KILL ME
-    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
-    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
-    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
-    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
     
     #間奏
     {"value": "Mute", "duration": "1/1","velocity": MELODY_BASE_VELOCITY},
