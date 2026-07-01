@@ -17,14 +17,18 @@ from alto_recorder_program.score import (
 	GUITAR,
 	GUITAR_IR_FILE,
 	MELODY,
+	MELODY_TUNETA,
 	ENABLE_MELODY,
+ 	ENABLE_MELODY_TUNETA,
 	ENABLE_BASS,
 	ENABLE_DRUMS,
 	ENABLE_GUITAR,
 )
 from alto_recorder_program.sequencer import build_sequence_events, mix_tracks, render_track, write_wav
-from alto_recorder_program.synth import render_bass_note, render_drum_hit, render_electric_guitar_brush, render_electric_guitar_note, render_recorder_note
-
+from alto_recorder_program.synth import (
+    render_bass_note, render_drum_hit, render_electric_guitar_brush,
+    render_electric_guitar_note, render_recorder_note, render_recorder_note_husky,
+)
 
 def build_song() -> None:
 	source_path = SCRIPT_DIR / "Alto recorder.wav"
@@ -34,11 +38,13 @@ def build_song() -> None:
 	print(f"Reference clip: {source_clip.estimated_note} ({source_clip.estimated_f0:.2f} Hz)")
 
 	melody_items = MELODY if ENABLE_MELODY else []
+	melody_tuneta_items = MELODY_TUNETA if ENABLE_MELODY_TUNETA else []
 	bass_items = BASS if ENABLE_BASS else []
 	drum_items = DRUMS if ENABLE_DRUMS else []
 	guitar_items = GUITAR if ENABLE_GUITAR else []
 
 	melody_events = build_sequence_events(melody_items)
+	melody_tuneta_events = build_sequence_events(melody_tuneta_items)
 	bass_events = build_sequence_events(bass_items)
 	drum_events = build_sequence_events(drum_items)
 	guitar_events = build_sequence_events(guitar_items)
@@ -60,7 +66,7 @@ def build_song() -> None:
 				BPM,
 				velocity=event.velocity,
 			)
-
+	
 	melody_track = render_track(
 		melody_events,
 		BPM,
@@ -80,6 +86,29 @@ def build_song() -> None:
 			velocity=event.velocity,
 		),
 	)
+ 
+ 
+	def render_melody_tuneta_event(event):
+		val = event.value
+		if isinstance(val, (list, tuple)):
+			parts = [
+				render_recorder_note_husky(source_clip, note, event.duration, BPM, velocity=event.velocity)
+				for note in val
+			]
+			return sum(parts) if parts else np.zeros(0, dtype=np.float32)
+		else:
+			return render_recorder_note_husky(
+				source_clip, val, event.duration, BPM, velocity=event.velocity,
+			)
+
+	melody_tuneta_track = render_track(
+		melody_tuneta_events,
+		BPM,
+		source_clip.sample_rate,
+		lambda event: render_melody_tuneta_event(event),
+	)
+ 
+	
 
 	def render_drum_event(event):
 		val = event.value
@@ -151,9 +180,10 @@ def build_song() -> None:
 		lambda event: render_guitar_event(event),
 	)
 
-	final_mix = mix_tracks([melody_track, bass_track, drum_track, guitar_track])
+	final_mix = mix_tracks([melody_track, melody_tuneta_track, bass_track, drum_track, guitar_track])
 
 	write_wav(output_dir / "melody.wav", melody_track, source_clip.sample_rate)
+	write_wav(output_dir / "melody_tuneta.wav", melody_tuneta_track, source_clip.sample_rate)
 	write_wav(output_dir / "bass.wav", bass_track, source_clip.sample_rate)
 	write_wav(output_dir / "drums.wav", drum_track, source_clip.sample_rate)
 	write_wav(output_dir / "guitar.wav", guitar_track, source_clip.sample_rate)

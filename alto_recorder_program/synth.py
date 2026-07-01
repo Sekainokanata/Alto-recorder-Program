@@ -312,3 +312,58 @@ def render_drum_hit(
         signal[:attack_len] *= np.linspace(0.0, 1.0, attack_len, dtype=np.float32)
 
     return normalize_audio(signal) * float(velocity)
+
+
+def render_recorder_note_husky(
+    source_clip: SourceClip,
+    target_note: str,
+    duration,
+    bpm: float,
+    velocity: float = 1.0,
+    octave_shift: int = 0,
+    breath_amount: float = 0.18,   # 息ノイズの混合量（0〜0.3くらいが自然）
+    grit_drive_db: float = 12.0,   # 歪みの強さ(dB)。上げるほどガラつく
+) -> np.ndarray:
+    import scipy.signal  # ブレスノイズの帯域整形用
+
+    target_beats = duration_to_beats(duration)
+    target_seconds = beats_to_seconds(target_beats, bpm)
+
+    source_midi = float(source_clip.estimated_midi)
+    target_midi = float(note_to_midi(target_note) + octave_shift * 12)
+    n_steps = target_midi - source_midi
+
+    # --- ①〜③: MELODYと同じ土台処理 ---
+    shifted = librosa.effects.pitch_shift(
+        source_clip.samples.astype(np.float32), sr=source_clip.sample_rate, n_steps=n_steps
+    )
+    stretched = fit_duration(shifted, source_clip.sample_rate, target_seconds)
+    shaped = apply_fade(stretched, source_clip.sample_rate)
+
+    sr = source_clip.sample_rate
+
+    # --- ④ 息成分(ブレスノイズ)を音量エンベロープに沿って混ぜる ---
+    noise = RNG.normal(0.0, 1.0, size=len(shaped)).astype(np.float32)
+    nyq = 0.5 * sr
+    b, a = scipy.signal.butter(2, [2000.0 / nyq, 7000.0 / nyq], btype="band")
+    breath_noise = scipy.signal.filtfilt(b, a, noise).astype(np.float32)
+
+    envelope = np.abs(shaped)
+    if envelope.size:
+        win = max(1, int(sr * 0.01))
+        kernel = np.ones(win, dtype=np.float32) / win
+        envelope = np.convolve(envelope, kernel, mode="same")
+
+    husky = shaped + breath_noise * envelope * breath_amount
+
+    # --- ⑤ ごく軽い歪みでガラつき(ラスプ感)を追加 ---
+    if Pedalboard is not None and Distortion is not None:
+        board = Pedalboard([Distortion(drive_db=grit_drive_db)])
+        husky = board(husky[np.newaxis, :], sr)[0]
+
+    return normalize_audio(husky) * float(velocity)
+
+
+#breath_amountを上げる → 「囁くような」息多めの声
+# grit_drive_dbを上げる → 「がなり」「潰れ気味」なガラガラ声
+# 両方低めにすると単に少しハスキー、両方高めだとかなりダミ声寄りになります
