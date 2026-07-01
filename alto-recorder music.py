@@ -18,8 +18,10 @@ from alto_recorder_program.score import (
 	GUITAR_IR_FILE,
 	MELODY,
 	MELODY_TUNETA,
+	MELODY_CHORUS,
 	ENABLE_MELODY,
  	ENABLE_MELODY_TUNETA,
+	ENABLE_MELODY_CHORUS,
 	ENABLE_BASS,
 	ENABLE_DRUMS,
 	ENABLE_GUITAR,
@@ -39,12 +41,14 @@ def build_song() -> None:
 
 	melody_items = MELODY if ENABLE_MELODY else []
 	melody_tuneta_items = MELODY_TUNETA if ENABLE_MELODY_TUNETA else []
+	melody_chorus_items = MELODY_CHORUS if ENABLE_MELODY_CHORUS else []
 	bass_items = BASS if ENABLE_BASS else []
 	drum_items = DRUMS if ENABLE_DRUMS else []
 	guitar_items = GUITAR if ENABLE_GUITAR else []
 
 	melody_events = build_sequence_events(melody_items)
 	melody_tuneta_events = build_sequence_events(melody_tuneta_items)
+	melody_chorus_events = build_sequence_events(melody_chorus_items)
 	bass_events = build_sequence_events(bass_items)
 	drum_events = build_sequence_events(drum_items)
 	guitar_events = build_sequence_events(guitar_items)
@@ -107,7 +111,32 @@ def build_song() -> None:
 		source_clip.sample_rate,
 		lambda event: render_melody_tuneta_event(event),
 	)
- 
+	def render_melody_chorus_event(event):
+		val = event.value
+		
+		def render_both(note_str):
+			if str(note_str).strip().lower() == "mute":
+				return np.zeros(0, dtype=np.float32)
+			
+			# 通常の音とハスキーな音を両方生成
+			note_normal = render_recorder_note(source_clip, note_str, event.duration, BPM, velocity=event.velocity)
+			note_husky = render_recorder_note_husky(source_clip, note_str, event.duration, BPM, velocity=event.velocity)
+			
+			# 2つの波形を合成 (シーケンサーのmix_tracks関数を利用)
+			return mix_tracks([note_normal, note_husky])
+
+		if isinstance(val, (list, tuple)):
+			parts = [render_both(note) for note in val]
+			return mix_tracks(parts) if parts else np.zeros(0, dtype=np.float32)
+		else:
+			return render_both(val)
+
+	melody_chorus_track = render_track(
+		melody_chorus_events,
+		BPM,
+		source_clip.sample_rate,
+		lambda event: render_melody_chorus_event(event),
+	)
 	
 
 	def render_drum_event(event):
@@ -180,10 +209,11 @@ def build_song() -> None:
 		lambda event: render_guitar_event(event),
 	)
 
-	final_mix = mix_tracks([melody_track, melody_tuneta_track, bass_track, drum_track, guitar_track])
+	final_mix = mix_tracks([melody_track, melody_tuneta_track, melody_chorus_track, bass_track, drum_track, guitar_track])
 
 	write_wav(output_dir / "melody.wav", melody_track, source_clip.sample_rate)
 	write_wav(output_dir / "melody_tuneta.wav", melody_tuneta_track, source_clip.sample_rate)
+	write_wav(output_dir / "melody_chorus.wav", melody_chorus_track, source_clip.sample_rate)
 	write_wav(output_dir / "bass.wav", bass_track, source_clip.sample_rate)
 	write_wav(output_dir / "drums.wav", drum_track, source_clip.sample_rate)
 	write_wav(output_dir / "guitar.wav", guitar_track, source_clip.sample_rate)
