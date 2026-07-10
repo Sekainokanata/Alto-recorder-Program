@@ -2,3 +2,4 @@ guiter_test/
 *.wav
 !Alto recorder.wav
 !57_grill_edge_pres_4.wav
+.vscode/
