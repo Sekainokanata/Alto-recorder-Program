@@ -15,14 +15,14 @@ ENABLE_GUITAR = True
 
 
 
-MELODY_TUNETA_BASE_VELOCITY = 0.3
-MELODY_BASE_VELOCITY = 0.3
-MELODY_CHORUS_BASE_VELOCITY = 0.15
+MELODY_TUNETA_BASE_VELOCITY = 0.02
+MELODY_BASE_VELOCITY = 0.4
+MELODY_CHORUS_BASE_VELOCITY = 0.05
 
 
 BASS_BASE_VELOCITY = 0.5
 GUITAR_BASE_VELOCITY = 0.10
-DRUM_BASE_VELOCITY = 0.4
+DRUM_BASE_VELOCITY = 0.2
 
 # Electric guitar IR file used by convolution.
 # Change only this file name/path to swap cabinet tone.
@@ -1082,37 +1082,53 @@ MELODY_TUNETA = [
 ]
 MELODY_CHORUS = [
     # LUV ME LUV ME
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
     
     #間奏
     {"value": "Mute", "duration": "1/1","velocity": MELODY_CHORUS_BASE_VELOCITY},
     
     # HATE ME HATE ME
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
     
     #間奏
     {"value": "Mute", "duration": "1/1","velocity": MELODY_CHORUS_BASE_VELOCITY},
     
     # LUV ME LUV ME
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
     
     #間奏
     {"value": "Mute", "duration": "1/1","velocity": MELODY_CHORUS_BASE_VELOCITY},
     
     # KILL ME KILL ME
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
     
     #間奏
     {"value": "Mute", "duration": "1/1","velocity": MELODY_CHORUS_BASE_VELOCITY},
@@ -1418,10 +1434,14 @@ MELODY_CHORUS = [
 
     
     # LUV ME LUV ME
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
     
     #正しさばかりで
     # {"value": "ラ3", "duration": "1/16","velocity": MELODY_CHORUS_BASE_VELOCITY},
@@ -1435,10 +1455,14 @@ MELODY_CHORUS = [
     {"value": "Mute", "duration": "1/1","velocity": MELODY_CHORUS_BASE_VELOCITY},
     
     # HATE ME HATE ME
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
     
     #全部奪って
     # {"value": "ラ3", "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
@@ -1449,10 +1473,14 @@ MELODY_CHORUS = [
     {"value": "Mute", "duration": "1/1","velocity": MELODY_CHORUS_BASE_VELOCITY},
     
     # LUV ME LUV ME
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
     
     #愛憎塗れで
     
@@ -1465,10 +1493,14 @@ MELODY_CHORUS = [
     {"value": "Mute", "duration": "1/1","velocity": MELODY_CHORUS_BASE_VELOCITY},
     
     # KILL ME KILL ME
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
-    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "1/4","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY*1.5},
+    {"value": ["ラ4","ミ4","ド4","ラ3"], "duration": "7/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/32","velocity": MELODY_CHORUS_BASE_VELOCITY},
     
     #此処を連れ出して
     # {"value": "ミ4", "duration": "1/8","velocity": MELODY_CHORUS_BASE_VELOCITY},
@@ -2411,7 +2443,7 @@ GUITAR = [
     {"value": "A3", "duration": "1/4", "velocity": GUITAR_BASE_VELOCITY*0.5},
     
     # 間奏
-    {"value": "A3", "duration": "6/4", "velocity": GUITAR_BASE_VELOCITY},##小節マタギ
+    {"value": "A4", "duration": "6/4", "velocity": GUITAR_BASE_VELOCITY*0.3},##小節マタギ
     
     # ド
     

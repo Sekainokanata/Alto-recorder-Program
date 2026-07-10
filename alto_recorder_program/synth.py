@@ -186,6 +186,13 @@ def render_bass_note(note: str, duration, bpm: float, sample_rate: int, velocity
     envelope = np.clip(np.minimum(attack, release), 0.0, 1.0)
     return normalize_audio(body * envelope) * float(velocity)
 
+KIND_GAIN = {
+    "kick-bass": 2.0,  # ここを1.0〜2.0くらいで好みに調整
+    "snare": 0.5,
+    "hi-hat": 0.5,
+}
+
+
 
 def render_drum_hit(
     source_clip: SourceClip,
@@ -310,8 +317,10 @@ def render_drum_hit(
     attack_len = min(target_len, int(0.001 * sample_rate))
     if attack_len > 0:
         signal[:attack_len] *= np.linspace(0.0, 1.0, attack_len, dtype=np.float32)
-
-    return normalize_audio(signal) * float(velocity)
+        
+    out = normalize_audio(signal) * float(velocity)
+    out *= KIND_GAIN.get(kind, 1.0)
+    return out
 
 
 def render_recorder_note_husky(
@@ -321,8 +330,8 @@ def render_recorder_note_husky(
     bpm: float,
     velocity: float = 1.0,
     octave_shift: int = 0,
-    breath_amount: float = 0.18,   # 息ノイズの混合量（0〜0.3くらいが自然）
-    grit_drive_db: float = 12.0,   # 歪みの強さ(dB)。上げるほどガラつく
+    breath_amount: float = 0.2,   # 息ノイズの混合量（0〜0.3くらいが自然）
+    grit_drive_db: float = 10.0,   # 歪みの強さ(dB)。上げるほどガラつく
 ) -> np.ndarray:
     import scipy.signal  # ブレスノイズの帯域整形用
 
