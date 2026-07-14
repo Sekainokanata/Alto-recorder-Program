@@ -9,9 +9,9 @@ ENABLE_MELODY_TUNETA = True
 ENABLE_MELODY_CHORUS = True
 
 
-ENABLE_BASS = True
-ENABLE_DRUMS = True
-ENABLE_GUITAR = True
+ENABLE_BASS = False
+ENABLE_DRUMS = False
+ENABLE_GUITAR = False
 
 
 
@@ -533,9 +533,105 @@ MELODY = [
     {"value": "ソ4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
     {"value": "ラ4", "duration": "1/2","velocity": MELODY_BASE_VELOCITY},
     
-    #間奏
-    #{"value": "Mute", "duration": "1/1","velocity": MELODY_BASE_VELOCITY},
+    #ゆ
+    {"value": "Mute", "duration": "3/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ミ3", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
     
+    #めみごこち～
+    {"value": "ド4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "レ4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ミ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "レ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    
+    {"value": "レ4", "duration": "3/8","velocity": MELODY_BASE_VELOCITY},##小説マタギ
+    
+    #でうそ
+    {"value": "ミ4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "レ4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ド4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ド4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    
+    {"value": "ラ4", "duration": "3/8","velocity": MELODY_BASE_VELOCITY},##小説マタギ
+    
+    #みたいだろ
+    {"value": "ミ4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "レ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ド4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ド4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    
+    #～い
+    {"value": "ラ3", "duration": "3/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "Mute", "duration": "4/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ソ3", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    
+    #まのとうきょうで
+    {"value": "ラ3", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "シ3", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ド4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "レ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ド4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    
+    #は正気
+    {"value": "シ3", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "シ3", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "シ3", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "シ3", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    
+    #じゃいられない　　あ
+    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "レ#4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "レ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ド4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ラ4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    
+    #まいことばで
+    {"value": "シ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "シ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "シ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "シ4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ラ4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    
+    #うずかせて　いま
+    {"value": "シ4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "シ4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "レ5", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "レ5", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "シ4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "シ3", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ラ3", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    
+    #がさいこうとそう
+    {"value": "シ3", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "シ3", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "シ3", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ラ3", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    
+    {"value": "シ3", "duration": "2/8","velocity": MELODY_BASE_VELOCITY},#小説マタギ
+    
+    #もわせて　なさ
+    {"value": "シ3", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ラ4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ラ4", "duration": "1/4","velocity": MELODY_BASE_VELOCITY},
+    {"value": "レ4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "Mute", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ファ4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    {"value": "ミ4", "duration": "1/8","velocity": MELODY_BASE_VELOCITY},
+    
+    #けはむようね　せ
+    
+    #じょうむじょうで
+    
+    #え～　一生
+    
+    #平行線ね
+    
+    #え～
+    
+
+       
 
 ]
 MELODY_TUNETA = [    
