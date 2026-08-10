@@ -3,4 +3,4 @@ guiter_test/
 !Alto recorder.wav
 !57_grill_edge_pres_4.wav
 .vscode/
-*.pyc
+alto_recorder_program/*.pyc
