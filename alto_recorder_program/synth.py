@@ -69,7 +69,17 @@ def fit_duration(samples: np.ndarray, sample_rate: int, target_seconds: float) -
     return adjusted.astype(np.float32)
 
 
-def render_recorder_note(source_clip: SourceClip, target_note: str, duration, bpm: float, velocity: float = 1.0, octave_shift: int = 0) -> np.ndarray:
+def render_recorder_note(
+    source_clip: SourceClip,
+    target_note: str,
+    duration,
+    bpm: float,
+    velocity: float = 1.0,
+    octave_shift: int = 0,
+    ornament: str | None = None,          # "shakuri" / "fall" / "both" / None
+    ornament_semitones: float | None = None,
+    ornament_ms: float | None = None,
+) -> np.ndarray:
     target_beats = duration_to_beats(duration)
     target_seconds = beats_to_seconds(target_beats, bpm)
 
@@ -80,6 +90,25 @@ def render_recorder_note(source_clip: SourceClip, target_note: str, duration, bp
     shifted = librosa.effects.pitch_shift(source_clip.samples.astype(np.float32), sr=source_clip.sample_rate, n_steps=n_steps)
     stretched = fit_duration(shifted, source_clip.sample_rate, target_seconds)
     shaped = apply_fade(stretched, source_clip.sample_rate)
+
+    if ornament:
+        sr = source_clip.sample_rate
+        n = len(shaped)
+        curve = np.zeros(n, dtype=np.float64)
+        if ornament in ("shakuri", "both"):
+            curve += shakuri_curve(
+                n, sr,
+                depth_semitones=ornament_semitones if ornament_semitones is not None else -3.0,
+                time_ms=ornament_ms if ornament_ms is not None else 80.0,
+            )
+        if ornament in ("fall", "both"):
+            curve += fall_curve(
+                n, sr,
+                depth_semitones=ornament_semitones if ornament_semitones is not None else -5.0,
+                time_ms=ornament_ms if ornament_ms is not None else 150.0,
+            )
+        shaped = apply_pitch_bend(shaped, sr, curve)
+
     return normalize_audio(shaped) * float(velocity)
 
 ###################################    
@@ -330,10 +359,13 @@ def render_recorder_note_husky(
     bpm: float,
     velocity: float = 1.0,
     octave_shift: int = 0,
-    breath_amount: float = 0.2,   # 息ノイズの混合量（0〜0.3くらいが自然）
-    grit_drive_db: float = 10.0,   # 歪みの強さ(dB)。上げるほどガラつく
+    breath_amount: float = 0.2,
+    grit_drive_db: float = 10.0,
+    ornament: str | None = None,          # ← 追加
+    ornament_semitones: float | None = None,  # ← 追加
+    ornament_ms: float | None = None,     # ← 追加
 ) -> np.ndarray:
-    import scipy.signal  # ブレスノイズの帯域整形用
+    import scipy.signal
 
     target_beats = duration_to_beats(duration)
     target_seconds = beats_to_seconds(target_beats, bpm)
@@ -342,7 +374,6 @@ def render_recorder_note_husky(
     target_midi = float(note_to_midi(target_note) + octave_shift * 12)
     n_steps = target_midi - source_midi
 
-    # --- ①〜③: MELODYと同じ土台処理 ---
     shifted = librosa.effects.pitch_shift(
         source_clip.samples.astype(np.float32), sr=source_clip.sample_rate, n_steps=n_steps
     )
@@ -350,6 +381,25 @@ def render_recorder_note_husky(
     shaped = apply_fade(stretched, source_clip.sample_rate)
 
     sr = source_clip.sample_rate
+
+    # --- ここにピッチベンドを追加（ブレスノイズを混ぜる前） ---
+    if ornament:
+        n = len(shaped)
+        curve = np.zeros(n, dtype=np.float64)
+        if ornament in ("shakuri", "both"):
+            curve += shakuri_curve(
+                n, sr,
+                depth_semitones=ornament_semitones if ornament_semitones is not None else -3.0,
+                time_ms=ornament_ms if ornament_ms is not None else 80.0,
+            )
+        if ornament in ("fall", "both"):
+            curve += fall_curve(
+                n, sr,
+                depth_semitones=ornament_semitones if ornament_semitones is not None else -5.0,
+                time_ms=ornament_ms if ornament_ms is not None else 150.0,
+            )
+        shaped = apply_pitch_bend(shaped, sr, curve)
+    # --- ここまで追加 ---
 
     # --- ④ 息成分(ブレスノイズ)を音量エンベロープに沿って混ぜる ---
     noise = RNG.normal(0.0, 1.0, size=len(shaped)).astype(np.float32)
@@ -365,14 +415,62 @@ def render_recorder_note_husky(
 
     husky = shaped + breath_noise * envelope * breath_amount
 
-    # --- ⑤ ごく軽い歪みでガラつき(ラスプ感)を追加 ---
     if Pedalboard is not None and Distortion is not None:
         board = Pedalboard([Distortion(drive_db=grit_drive_db)])
         husky = board(husky[np.newaxis, :], sr)[0]
 
     return normalize_audio(husky) * float(velocity)
 
-
 #breath_amountを上げる → 「囁くような」息多めの声
 # grit_drive_dbを上げる → 「がなり」「潰れ気味」なガラガラ声
 # 両方低めにすると単に少しハスキー、両方高めだとかなりダミ声寄りになります
+
+def _semitones_to_rate(semitones: np.ndarray) -> np.ndarray:
+    return np.power(2.0, semitones / 12.0)
+
+
+def _ease(x: np.ndarray) -> np.ndarray:
+    # スムーズステップ：始点・終点でクリックノイズが出ないようにする
+    return x * x * (3.0 - 2.0 * x)
+
+
+def apply_pitch_bend(samples: np.ndarray, sample_rate: int, semitone_curve: np.ndarray) -> np.ndarray:
+    """semitone_curve（samplesと同じ長さ）に沿って、可変レートのリサンプリングで
+    ピッチを時間変化させる。0=変化なし。音価はほぼ維持される。"""
+    samples = np.asarray(samples, dtype=np.float32)
+    n = len(samples)
+    if n < 2:
+        return samples
+
+    rate = _semitones_to_rate(np.asarray(semitone_curve, dtype=np.float64))
+    total = float(np.sum(rate))
+    if total <= 0:
+        return samples
+    # 読み出しヘッドが最終的に原音の終端(n-1)に到達するよう正規化
+    # → ベンド区間以外はrate=1のままなので、note全体の長さはほぼ変わらない
+    rate *= (n - 1) / total
+
+    read_pos = np.concatenate(([0.0], np.cumsum(rate)))[:n]
+    src_index = np.arange(n, dtype=np.float64)
+    warped = np.interp(read_pos, src_index, samples.astype(np.float64))
+    return warped.astype(np.float32)
+
+
+def shakuri_curve(n: int, sample_rate: int, depth_semitones: float = -3.0, time_ms: float = 80.0) -> np.ndarray:
+    """しゃくり：出だしをdepth_semitones低い音程から始め、time_msかけて
+    ターゲット音程まで滑り上げる。"""
+    curve = np.zeros(n, dtype=np.float64)
+    span = min(n, max(1, int(round(sample_rate * time_ms / 1000.0))))
+    ramp = _ease(np.linspace(0.0, 1.0, span, dtype=np.float64))
+    curve[:span] = depth_semitones * (1.0 - ramp)
+    return curve
+
+
+def fall_curve(n: int, sample_rate: int, depth_semitones: float = -5.0, time_ms: float = 150.0) -> np.ndarray:
+    """フォール：終わりのtime_msでターゲット音程からdepth_semitones低い音程まで
+    滑り下げる。"""
+    curve = np.zeros(n, dtype=np.float64)
+    span = min(n, max(1, int(round(sample_rate * time_ms / 1000.0))))
+    ramp = _ease(np.linspace(0.0, 1.0, span, dtype=np.float64))
+    curve[-span:] = depth_semitones * ramp
+    return curve

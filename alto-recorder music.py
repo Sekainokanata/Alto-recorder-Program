@@ -57,18 +57,23 @@ def build_song() -> None:
 		val = event.value
 		if isinstance(val, (list, tuple)):
 			parts = [
-				render_recorder_note(source_clip, note, event.duration, BPM, velocity=event.velocity)
+				render_recorder_note(
+					source_clip, note, event.duration, BPM,
+					velocity=event.velocity,
+					ornament=event.ornament,
+					ornament_semitones=event.ornament_semitones,
+					ornament_ms=event.ornament_ms,
+				)
 				for note in val
 			]
-			mix = sum(parts) if parts else np.zeros(0, dtype=np.float32)
-			return mix
+			return sum(parts) if parts else np.zeros(0, dtype=np.float32)
 		else:
 			return render_recorder_note(
-				source_clip,
-				val,
-				event.duration,
-				BPM,
+				source_clip, val, event.duration, BPM,
 				velocity=event.velocity,
+				ornament=event.ornament,
+				ornament_semitones=event.ornament_semitones,
+				ornament_ms=event.ornament_ms,
 			)
 	
 	melody_track = render_track(
@@ -96,13 +101,23 @@ def build_song() -> None:
 		val = event.value
 		if isinstance(val, (list, tuple)):
 			parts = [
-				render_recorder_note_husky(source_clip, note, event.duration, BPM, velocity=event.velocity)
+				render_recorder_note_husky(
+					source_clip, note, event.duration, BPM,
+					velocity=event.velocity,
+					ornament=event.ornament,
+					ornament_semitones=event.ornament_semitones,
+					ornament_ms=event.ornament_ms,
+				)
 				for note in val
 			]
 			return sum(parts) if parts else np.zeros(0, dtype=np.float32)
 		else:
 			return render_recorder_note_husky(
-				source_clip, val, event.duration, BPM, velocity=event.velocity,
+					source_clip, val, event.duration, BPM,
+					velocity=event.velocity,
+					ornament=event.ornament,
+					ornament_semitones=event.ornament_semitones,
+					ornament_ms=event.ornament_ms,
 			)
 
 	melody_tuneta_track = render_track(

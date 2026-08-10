@@ -112,10 +112,12 @@ class Event:
     duration: object
     start_beats: float | None = None
     velocity: float = 1.0
+    ornament: str | None = None            # ← 追加
+    ornament_semitones: float | None = None
+    ornament_ms: float | None = None
 
 
 def build_sequence_events(items: Sequence[dict]) -> list[Event]:
-    # (変更なし)
     events: list[Event] = []
     cursor = 0.0
     for item in items:
@@ -130,6 +132,9 @@ def build_sequence_events(items: Sequence[dict]) -> list[Event]:
                 duration=item["duration"],
                 start_beats=float(start_beats),
                 velocity=float(item.get("velocity", 1.0)),
+                ornament=item.get("ornament"),                     # ← 追加
+                ornament_semitones=item.get("ornament_semitones"),
+                ornament_ms=item.get("ornament_ms"),
             )
         )
     return events
